@@ -7,20 +7,20 @@ pipeline {
                     steps {
                         script {
                             def group1 = [:]
-                            group1["Job01"] = {
-                                echo "Job01"
+                            group1["test1"] = {
+                                echo "test1"
                                 sh "date -u"
-                                build(job: 'job-test-01')
+                                build(job: 'test1')
                             }
-                            group1["Job02"] = {
-                                echo "Job02"
+                            group1["test2"] = {
+                                echo "test2"
                                 sh "date -u"
-                                build(job: 'job-test-02')
+                                build(job: 'test2')
                             }
-                            group1["Job03"] = {
-                                echo "Job03"
+                            group1["test3"] = {
+                                echo "test3"
                                 sh "date -u"
-                                build(job: 'job-test-03')
+                                build(job: 'test3')
                             }
                             parallel group1  // Run parallel tasks
                         }
